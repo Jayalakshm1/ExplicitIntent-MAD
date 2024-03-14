@@ -27,14 +27,8 @@ Step 7: Save and run the application.
 
 
 ## PROGRAM:
-```
-/*
-Program to print the text “ExplicitIntent”.
-Developed by: Kayyuru Tharani
-Registeration Number : 212221040080
-*/
-```
-### Activity_main.xml
+
+###Activity_main.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
