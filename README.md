@@ -1,34 +1,20 @@
 # Ex.No:4 To create a two screens , first screen will take one number input from user. After click on Factorial button, second screen will open and it should display factorial of the same number using Explicit Intents.
-
-
 ## AIM:
-
 To create a two screens , first screen will take one number input from user. After click on Factorial button, second screen will open and it should display factorial of the same number using Explicit Intents.
-
-
 ## EQUIPMENTS REQUIRED:
-
 Latest Version Android Studio
-
 ## ALGORITHM:
+```
 Step 1: Open Android Stdio and then click on File -> New -> New project.
-
 Step 2: Then type the Application name as ExplicitIntent and click Next.
-
 Step 3: Then select the Minimum SDK as shown below and click Next.
-
 Step 4: Then select the Empty Activity and click Next. Finally click Finish.
-
 Step 5: Design layout in activity_main.xml.
-
 Step 6: Display factorial number using Explicit Intents in MainActivity file.
-
 Step 7: Save and run the application.
-
-
+```
 ## PROGRAM:
-
-###Activity_main.xml
+## activity_main.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -48,7 +34,6 @@ Step 7: Save and run the application.
         android:layout_marginTop="220dp"
         android:textStyle="bold"
         android:textSize="30sp"/>
-
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
@@ -57,17 +42,14 @@ Step 7: Save and run the application.
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Factorial" />
-
 </RelativeLayout>
 ```
-
-### Activity_main2.xml
+## activity_main2.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/txt2"
         android:layout_width="500dp"
@@ -76,27 +58,21 @@ Step 7: Save and run the application.
         android:layout_marginTop="40dp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="30sp"
-        />
-
+        android:textSize="30sp"/>
 </RelativeLayout>
 ```
-
-### MainActivity.java
+## MainActivity.java
 ```
 package com.example.explicitintent;
 import androidx.appcompat.app.AppCompatActivity;
-
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.widget.Button;
-        import android.widget.EditText;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
     EditText edt1;
     Button btn1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,60 +84,39 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("number",edt1.getText().toString());
             startActivity(i);
         });
-
     }
 }
 ```
-### Main Activity2.java
+## Main Activity2.java
 ```
 package com.example.explicitintent;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.TextView;
-
-
 public class MainActivity2 extends AppCompatActivity {
     TextView txt2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
         Bundle b = getIntent().getExtras();
-
         int no = Integer.parseInt(b.getString("number"));
         long f=1;
-
         for(int i=no; i>0; i--)
         {
             f = f * i;
         }
-
         txt2 = findViewById(R.id.txt2);
         txt2.setText("Factorial of " + no + " is " + f);
     }
 }
 ```
 ## OUTPUT
-
-![Screenshot (116)](https://github.com/KayyuruTharani/ExplicitIntent-MAD/assets/142209319/4ba103e1-4b29-4f04-aa32-bb88fae2a0b5)
-
-![Screenshot (117)](https://github.com/KayyuruTharani/ExplicitIntent-MAD/assets/142209319/772ad660-2c18-4c33-9450-f8e44f1efa14)
-
-![Screenshot (118)](https://github.com/KayyuruTharani/ExplicitIntent-MAD/assets/142209319/e3e2cfe2-fff8-4425-ad2b-f2f2879e45ae)
-
-
-
-
-
+![7](https://github.com/Jayalakshm1/ExplicitIntent-MAD/assets/130430542/e698801c-594e-4f82-8bdd-91d4e2758ea3)
+![8](https://github.com/Jayalakshm1/ExplicitIntent-MAD/assets/130430542/049c2005-4a49-4ddd-a0bf-516dff8547ef)
+![9](https://github.com/Jayalakshm1/ExplicitIntent-MAD/assets/130430542/5d6ad176-f8e8-49a4-a6c3-64d9704e6900)
 ## RESULT
 Thus a Simple Android Application create a Explicit Intents using Android Studio is developed and executed successfully.
 
